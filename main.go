@@ -132,7 +132,7 @@ func processReceipt(c *gin.Context) {
 	newReceipt.ID = strconv.FormatInt(time.Now().UnixNano(), 10)
 
 	receipts = append(receipts, newReceipt)
-	c.IndentedJSON(http.StatusCreated, gin.H{"id": newReceipt.ID})
+	c.IndentedJSON(http.StatusOK, gin.H{"id": newReceipt.ID})
 }
 
 func getPoints(c *gin.Context) {
